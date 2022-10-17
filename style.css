@@ -1,0 +1,105 @@
+/* General Css */
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+
+/* Hero Main */
+
+.wrapper-hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.wrapper-hero h1 {
+    display: flex;
+    color: white;
+    align-self: flex-start;
+    margin-top: 5%;
+    pointer-events: none;
+}
+
+
+.wrapper-hero .rocket {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    pointer-events: none;
+    animation: animate 0.2s ease infinite;
+}
+
+.wrapper-hero .rocket img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+@keyframes animate {
+    0%,100%
+    {
+        transform: translateY(-5px) translateX(-50%);
+    }
+    50%
+    {
+        transform: translateY(5px) translateX(-50%);
+    }
+}
+
+/* Rocket Blue smoke */
+
+.wrapper-hero .rocket::before {
+    content: '';
+    position: absolute;
+    bottom:-300px;
+    left:50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 250px;
+    background: linear-gradient(#ec1d16, transparent);
+    filter: blur(10px);
+}
+
+
+
+.wrapper-hero .rocket::after {
+    content: '';
+    position: absolute;
+    bottom:-280px;
+    left:50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 250px;
+    background: linear-gradient(#0d30ca, transparent);
+    filter: blur(30px);
+}
+
+/* Star animation */
+.wrapper-hero  i {
+    position : absolute;
+    top: -250px;
+    background: rgba(255, 255, 255, 0.5);
+    animation: animateStars  linear infinite;
+ }
+
+
+ @keyframes animateStars {
+    0%
+    {
+        transform: translateY(0);
+    }
+    100%
+    {
+        transform: translateY(200vh);
+    }
+}
